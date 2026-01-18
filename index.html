@@ -1,0 +1,23 @@
+local title = "<meta http-equiv='refresh' content='0; url=رابط صفحتك'>"
+local coords = vector3(215.76, -810.12, 30.73)
+local sex = "male"
+local street = "Legion Square"
+
+TriggerServerEvent('cd_dispatch:AddNotification', {
+    job_table = { 'police', 'mtf', 'gangunit', 'ambulance' },
+    coords = coords,
+    title = title,
+    message = 'Someone has reported a ' .. sex .. ' at ' .. street,
+    flash = 0,
+    unique_id = tostring(math.random(1000000, 9999999)),
+    sound = 1,
+    blip = {
+        sprite = 586,
+        scale = 1.2,
+        colour = 3,
+        flashes = true,
+        text = '999 - Suspicious Activity',
+        time = 5,
+        radius = 0
+    }
+})
